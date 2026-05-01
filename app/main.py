@@ -1,7 +1,7 @@
 from datetime import datetime, time
 
 
-def main():
+def main() -> None:
     print("Starting log generator... (Press Ctrl+C to stop)")
 
     try:
@@ -20,7 +20,7 @@ def main():
             time.sleep(1)
 
     except KeyboardInterrupt:
-        print(f"Aplication terminated by user.")
+        print("\Application terminated by user.")
 
 
 if __name__ == "__main__":
