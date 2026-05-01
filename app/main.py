@@ -20,7 +20,7 @@ def main() -> None:
             time.sleep(1)
 
     except KeyboardInterrupt:
-        print("\Application terminated by user.")
+        print("\n[Application terminated by user.]")
 
 
 if __name__ == "__main__":
