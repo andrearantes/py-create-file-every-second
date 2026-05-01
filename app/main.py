@@ -1,26 +1,20 @@
-from datetime import datetime, time
+from datetime import datetime
+from time import sleep
 
 
 def main() -> None:
-    print("Starting log generator... (Press Ctrl+C to stop)")
+    while True:
+        now = datetime.now()
 
-    try:
-        while True:
-            now = datetime.now()
+        filename = f"app-{now.hour}_{now.minute}_{now.second}.log"
+        content = now.strftime("%Y-%m-%d %H:%M:%S")
 
-            name_file = now.strftime("app-%H_%M_%S.log")
+        with open(filename, "w") as f:
+            f.write(content)
 
-            content = now.strftime("%Y-%m-%d %H:%M:%S")
+        print(content, filename)
 
-            with open(name_file, "w") as file:
-                file.write(content)
-
-            print(f"{content} {name_file}")
-
-            time.sleep(1)
-
-    except KeyboardInterrupt:
-        print("\n[Application terminated by user.]")
+        sleep(1)
 
 
 if __name__ == "__main__":
